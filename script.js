@@ -113,19 +113,6 @@
 
 
 
-var matrix = [];
-
-   
-
-var grassArr = [];
-
-var grassEaterArr = [];
-
-var gishatichArr = [];
- 
-var ggEaterArr = [];
-
-var eaterArr = [];
 
 
 let side = 20;
@@ -134,12 +121,7 @@ let side = 20;
 
 function setup() {
 
- for(var y = 0; y < 30; y++){
-     matrix[y] = [];
-     for(var x = 0; x < 35; x++){
-        matrix[y][x] = random([0, 0, 1, 1, 1, 1, 1, 2, 2, 3, 4, 5])
-     }
- }
+
 
 
 

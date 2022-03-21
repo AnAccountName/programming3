@@ -1,0 +1,21 @@
+{
+  "name": "programming3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "script.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnAccountName/programming3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnAccountName/programming3/issues"
+  },
+  "homepage": "https://github.com/AnAccountName/programming3#readme"
+}
