@@ -112,7 +112,7 @@
 
 
 
-
+var socket = io();
 
 
 let side = 20;
@@ -126,33 +126,9 @@ function setup() {
 
 
     frameRate(4);
-    createCanvas(matrix[0].length * side, matrix.length * side);
+    createCanvas(35 * side, 35 * side);
     background('#acacac');
 
-    for(var y = 0; y < matrix.length; y++){
-        for(var x = 0; x < matrix[y].length; x++){
-        if(matrix[y][x] == 1){
-            var gr = new Grass(x, y, 1);
-            grassArr.push(gr);
-        }
-        else if(matrix[y][x] == 2) {
-            var ge = new GrassEater(x, y, 2);
-            grassEaterArr.push(ge);
-        }
-        else if(matrix[y][x] == 3) {
-            var gi = new Gishatich(x, y, 3);
-            gishatichArr.push(gi);
-        }
-        else if(matrix[y][x] == 4) {
-            var gg = new GgEater(x, y, 4);
-            ggEaterArr.push(gg);
-        }
-        else if(matrix[y][x] == 5) {
-            var e = new Eater(x, y, 5);
-            eaterArr.push(e);
-        }
-        }
-    }
  }
 
 
@@ -184,27 +160,31 @@ function draw() {
         }
     }
 
-    for(var i in grassArr){
-        grassArr[i].mul();
-    }
- 
-    for(var i in grassEaterArr){
-        grassEaterArr[i].eat();
-    }
-
-    for(var i in gishatichArr){
-        gishatichArr[i].eat();
-    }
-    for(var i in ggEaterArr){
-        ggEaterArr[i].eat();
-    }
-    for(var i in eaterArr){
-        eaterArr[i].eat();
-    }
  }
  
 
+ socket.on('send matrix', draw);
+ 
 
+
+ function kill() {
+     socket.emit("kill");
+ }
+ function addGrass() {
+     socket.emit("add gGrass");
+ }
+ function addGrassEater() {
+     socket.emit("add GrassEater");
+ }
+ function addGishatich() {
+    socket.emit("add Gishatich");
+}
+function addGgEater() {
+    socket.emit("add GgEater");
+}
+function addEater() {
+    socket.emit("add Eater");
+}
 
 
 

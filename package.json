@@ -1,7 +1,6 @@
 {
   "name": "programming3",
   "version": "1.0.0",
-  "description": "",
   "main": "script.js",
   "scripts": {
     "dev": "script.js",
@@ -17,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/AnAccountName/programming3/issues"
   },
-  "homepage": "https://github.com/AnAccountName/programming3#readme"
+  "homepage": "https://github.com/AnAccountName/programming3#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.17.3",
+    "socket.io": "^4.4.1"
+  }
 }
