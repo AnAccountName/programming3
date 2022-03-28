@@ -6,18 +6,18 @@ module.exports = class GrassEater extends LivingCreature{
         this.energy = 8;
         }
 
-        // getNewCoordinates(){
-        //         this.directions = [
-        //             [this.x - 1, this.y - 1],
-        //             [this.x    , this.y - 1],
-        //             [this.x + 1, this.y - 1],
-        //             [this.x - 1, this.y    ],
-        //             [this.x + 1, this.y    ],
-        //             [this.x - 1, this.y + 1],
-        //             [this.x    , this.y + 1],
-        //             [this.x + 1, this.y + 1]
-        //         ];
-        //     }
+        getNewCoordinates(){
+                this.directions = [
+                    [this.x - 1, this.y - 1],
+                    [this.x    , this.y - 1],
+                    [this.x + 1, this.y - 1],
+                    [this.x - 1, this.y    ],
+                    [this.x + 1, this.y    ],
+                    [this.x - 1, this.y + 1],
+                    [this.x    , this.y + 1],
+                    [this.x + 1, this.y + 1]
+                ];
+            }
             
     chooseCell(character) {
         this.getNewCoordinates();
@@ -42,7 +42,7 @@ module.exports = class GrassEater extends LivingCreature{
 
     move() {
         var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        var newCell = Math.random() *emptyCells;
 
         if(newCell){
             var newX = newCell[0];
@@ -62,7 +62,7 @@ module.exports = class GrassEater extends LivingCreature{
 
     eat() {
         var emptyCells = this.chooseCell(1);
-        var newCell = random(emptyCells);
+        var newCell = Math.random()*emptyCells;
 
         if(newCell){
             var newX = newCell[0];

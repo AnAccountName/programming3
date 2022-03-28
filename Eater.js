@@ -10,18 +10,18 @@ module.exports = class Eater extends LivingCreature{
         return super.chooseCell(character);
     }
 
-    // getNewCoordinates(){
-    //     this.directions = [
-    //         [this.x - 1, this.y - 1],
-    //         [this.x    , this.y - 1],
-    //         [this.x + 1, this.y - 1],
-    //         [this.x - 1, this.y    ],
-    //         [this.x + 1, this.y    ],
-    //         [this.x - 1, this.y + 1],
-    //         [this.x    , this.y + 1],
-    //         [this.x + 1, this.y + 1]
-    //     ];
-    //  }
+    getNewCoordinates(){
+        this.directions = [
+            [this.x - 1, this.y - 1],
+            [this.x    , this.y - 1],
+            [this.x + 1, this.y - 1],
+            [this.x - 1, this.y    ],
+            [this.x + 1, this.y    ],
+            [this.x - 1, this.y + 1],
+            [this.x    , this.y + 1],
+            [this.x + 1, this.y + 1]
+        ];
+     }
 
      mul () {
         var emptyCells = this.chooseCell(0);
@@ -35,6 +35,7 @@ module.exports = class Eater extends LivingCreature{
             var eater = new Eater(newX, newY, 5);
             eaterArr.push(eater);
         }
+
     }
 
     move() {
@@ -59,7 +60,7 @@ module.exports = class Eater extends LivingCreature{
 
     eat() {
         var emptyCells = this.chooseCell(4);
-        var newCell = random(emptyCells);
+        var newCell = Math.random()*emptyCells;
 
         if(newCell){
             var newX = newCell[0];

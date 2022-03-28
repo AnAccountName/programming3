@@ -121,19 +121,16 @@ let side = 20;
 
 function setup() {
 
-
-
-
-
-    frameRate(4);
+    
     createCanvas(35 * side, 35 * side);
     background('#acacac');
 
  }
 
+// socket.on('send matrix', draw);  
 
 
-function draw() {
+function nkarel(matrix) {
 
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
@@ -151,7 +148,7 @@ function draw() {
                 fill("red");  
             }
             else if (matrix[y][x] == 4) {
-                fill("white");  
+                fill("violet");  
             }
             else if (matrix[y][x] == 5) {
                 fill("black");  
@@ -161,9 +158,10 @@ function draw() {
     }
 
  }
+ socket.on("send matrix", nkarel);
  
 
- socket.on('send matrix', draw);
+ 
  
 
 

@@ -17,7 +17,7 @@ server.listen(3000);
 //քո սկրիպտ ֆայլից տպի մատրիցդ գեներացնոլու հատվածը և դատարկ զանգվածը
 // ինձ մոտ այն չի գեներացվում,,,քեզ մոտ լաաաավ կլինի , որ գեներացվի
 
-let matrix = [];
+matrix = [];
 
 for(var y = 0; y < 30; y++){
     matrix[y] = [];
@@ -39,25 +39,25 @@ for(var y = 0; y < 30; y++){
 //եթե գնացիր ու ամենինչ գրեցիր, արի էստեղ, դեռ անելիք ունենք
 
 //էստեղ բեր քո գազանների դատարկ զանգվածները
-    let grassArr = [];
-    let grassEaterArr = [];
-    let gishatichArr = [];
-    let ggEaterArr = [];
-    let eaterArr = [];
+    grassArr = [];
+    grassEaterArr = [];
+    gishatichArr = [];
+    ggEaterArr = [];
+    eaterArr = [];
 
     //քանի որ քո կլասս-երը արդեն մոդուլներ են և ոչ մի կապ չունեն html ֆայլիդ հետ՝
     //այլ աշխատում են սերվերի վրա:
     //Դու պետք է նրանց իմպորտ անես: Ինձ մոտ նրանք երկուսն են, քեզ մոտ ավելի շատ
-     let Grass = require("./Grass");
-     let GrassEater = require("./GrassEater");
-     let Gishatich = require("./Gishatich");
-     let GgEater = require("./GgEater");
-     let Eater = require("./Eater");
+     Grass = require("./Grass");
+     GrassEater = require("./GrassEater");
+     Gishatich = require("./Gishatich");
+     GgEater = require("./GgEater");
+     Eater = require("./Eater");
 
     //Այժմ լցնենք մատրիցը օբյեկտներով
     //սարքի մի հատ ֆունկցիա օրինակ createObject անունով
     //և էստեղ բեր քո սկրիպտ ֆայլի օբյեկտներով լցնող հատվածը
-    function createObject(matrix) {
+    function createObject() {
         for (var y = 0; y < matrix.length; y++) {
             for (var x = 0; x < matrix[y].length; x++) {
                 if (matrix[y][x] == 1) {
@@ -126,7 +126,7 @@ for(var y = 0; y < 30; y++){
       //և մենք դեռ չէինք կանչել createObject ֆունկցիան
       // էստեղ կկանչենք )))
 io.on('connection', function (socket) {
-    createObject(matrix);
+    createObject();
 })
 
 //դե ինչ այսօր այսքանը:

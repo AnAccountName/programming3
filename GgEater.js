@@ -10,18 +10,18 @@ module.exports = class GgEater extends LivingCreature{
         return super.chooseCell(character);
     }
 
-    // getNewCoordinates(){
-    //     this.directions = [
-    //         [this.x - 1, this.y - 1],
-    //         [this.x    , this.y - 1],
-    //         [this.x + 1, this.y - 1],
-    //         [this.x - 1, this.y    ],
-    //         [this.x + 1, this.y    ],
-    //         [this.x - 1, this.y + 1],
-    //         [this.x    , this.y + 1],
-    //         [this.x + 1, this.y + 1]
-    //     ];
-    //  }
+    getNewCoordinates(){
+        this.directions = [
+            [this.x - 1, this.y - 1],
+            [this.x    , this.y - 1],
+            [this.x + 1, this.y - 1],
+            [this.x - 1, this.y    ],
+            [this.x + 1, this.y    ],
+            [this.x - 1, this.y + 1],
+            [this.x    , this.y + 1],
+            [this.x + 1, this.y + 1]
+        ];
+     }
 
      mul () {
         var emptyCells = this.chooseCell(0);
@@ -39,7 +39,7 @@ module.exports = class GgEater extends LivingCreature{
 
     move() {
         var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        var newCell = Math.random()*emptyCells;
 
         if(newCell){
             var newX = newCell[0];
@@ -59,7 +59,7 @@ module.exports = class GgEater extends LivingCreature{
 
     eat() {
         var emptyCells = this.chooseCell(1, 3);
-        var newCell = random(emptyCells);
+        var newCell = Math.random()*emptyCells;
 
         if(newCell){
             var newX = newCell[0];
