@@ -151,7 +151,7 @@ function nkarel(matrix) {
                 fill("violet");  
             }
             else if (matrix[y][x] == 5) {
-                fill("black");  
+                fill("blue");  
             }
             rect(x * side, y * side, side, side);
         }
@@ -166,6 +166,7 @@ function nkarel(matrix) {
 
 
  function kill() {
+    
      socket.emit("kill");
  }
  function addGrass() {
@@ -174,15 +175,8 @@ function nkarel(matrix) {
  function addGrassEater() {
      socket.emit("add GrassEater");
  }
- function addGishatich() {
-    socket.emit("add Gishatich");
-}
-function addGgEater() {
-    socket.emit("add GgEater");
-}
-function addEater() {
-    socket.emit("add Eater");
-}
+
+
 
 
 

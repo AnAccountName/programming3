@@ -3,7 +3,7 @@ let LivingCreature = require('./LivingCreature');
 module.exports = class Eater extends LivingCreature{
     constructor(x,y,index) {
         super(x, y, index);
-        this.energy = 8;
+        this.energy = 4;
     }
     chooseCell(character) {
         this.getNewCoordinates();
@@ -27,7 +27,7 @@ module.exports = class Eater extends LivingCreature{
         var emptyCells = this.chooseCell(0);
         var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
  
-        if(newCell && this.energy >= 12){
+        if(newCell && this.energy >= 50){
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 5;
@@ -40,7 +40,7 @@ module.exports = class Eater extends LivingCreature{
 
     move() {
         var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
 
         if(newCell){
             var newX = newCell[0];
@@ -60,7 +60,7 @@ module.exports = class Eater extends LivingCreature{
 
     eat() {
         var emptyCells = this.chooseCell(4);
-        var newCell = Math.random()*emptyCells;
+        var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
 
         if(newCell){
             var newX = newCell[0];
